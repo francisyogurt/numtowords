@@ -71,10 +71,6 @@ local function num_to_words(num: number): string
 			parsedNumber = `{parsedNumber} {suffix}`
 		end
 		
-		if #result > 0 then
-			parsedNumber = `and {parsedNumber}`
-		end
-		
 		table.insert(result, parsedNumber)
 	end
 	
