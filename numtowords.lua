@@ -75,4 +75,4 @@ local function num_to_words(num: number): string
 	return table.concat(result, " ")
 end
 
-print(num_to_words(123_456))
+print(num_to_words(123_456)) -- Output: one hundred and twenty-three thousand four hundred and fifty-six
