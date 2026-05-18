@@ -62,6 +62,8 @@ local function num_to_words(num: number): string
 	local formatString = ""
 	for idx = #parts, 1, -1 do
 		local digit = parts[idx]
+		if digit == 0 then continue end
+		
 		local parsedNumber = parse_num(digit)
 		
 		local suffix = suffixMap[idx - 1]
@@ -69,10 +71,12 @@ local function num_to_words(num: number): string
 			parsedNumber = `{parsedNumber} {suffix}`
 		end
 		
+		if #result > 0 then
+			parsedNumber = `and {parsedNumber}`
+		end
+		
 		table.insert(result, parsedNumber)
 	end
 	
 	return table.concat(result, " ")
 end
-
-print(num_to_words(123_456)) -- Output: one hundred and twenty-three thousand four hundred and fifty-six
