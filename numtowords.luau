@@ -91,3 +91,12 @@ local function num_to_words(num: number): string
 	
 	return table.concat(parts, " ")
 end
+
+--[[
+	Output:
+		one million, 
+		two hundred and thirty-four thousand, 
+		four hundred and fifty-six
+]]
+
+num_to_words(1_234_456)
